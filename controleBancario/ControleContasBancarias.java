@@ -1,30 +1,28 @@
 package controleBancario;
 import java.util.ArrayList;
 
-import modelosDeClasses.ContaCorrente;
-import modelosDeClasses.ContaPoupanca;
-import modelosDeClasses.AplicacoesEmFundo;
+import modelosDeClasses.ClienteDoBanco;
 
 
 public class ControleContasBancarias {
 
-	private ArrayList<ContaCorrente> listaContaCorrente;
+    private ArrayList<ClienteDoBanco> listaClientesDoBanco;
+    
 
     public ControleContasBancarias() {
-        this.listaContaCorrente = new ArrayList<ContaCorrente>();
+        this.listaClientesDoBanco = new ArrayList<ClienteDoBanco>();
     }
     
-    public ArrayList<ContaCorrente> getlistaContaCorrente() {
-        return listaContaCorrente;
+    public ArrayList<ClienteDoBanco> getlistaClienteDoBanco() {
+        return listaClientesDoBanco;
     }
     
-    public void adicionar(ContaCorrente umaContaCorrente) {
-    	listaContaCorrente.add(umaContaCorrente);
+    public void adicionar(ClienteDoBanco umClienteDoBanco) {
+    	listaClientesDoBanco.add(umClienteDoBanco);
     }
     
-    public void remover(ContaCorrente umaContaCorrente) {
-    	listaContaCorrente.remove(umaContaCorrente);
+    public void remover(ClienteDoBanco umClienteDoBanco) {
+    	listaClientesDoBanco.remove(umClienteDoBanco);
     }
-    
 	
 }
