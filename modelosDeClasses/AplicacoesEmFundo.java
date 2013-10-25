@@ -27,5 +27,10 @@ public class AplicacoesEmFundo extends ClienteDoBanco {
 			Double taxaDoImpostoSobreOperacoesFinanceiras) {
 		this.taxaDoImpostoSobreOperacoesFinanceiras = taxaDoImpostoSobreOperacoesFinanceiras;
 	}
+	
+	public void saldoAplicacoesEmFundo(Double saldo){
+		saldo = ((getSaldo() + getDeposito()) -taxaDoImpostoSobreOperacoesFinanceiras -taxaDoImpostoDeRenda - getRetirada());
+		this.setSaldo(saldo);
+	}
 
 }

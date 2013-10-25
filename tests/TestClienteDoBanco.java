@@ -12,12 +12,15 @@ public class TestClienteDoBanco {
 	
 	@Before
 	public void setUp() throws Exception {
+		//ClienteDoBanco
 		clienteDoBanco = new ClienteDoBanco("Cliente", "012.345.678-96" , "1.234.567" , "Possui");
 		clienteDoBanco.setDeposito(100.0);
 		clienteDoBanco.setRetirada(20.0);
-		clienteDoBanco.setSaldoInicial(0.0);
+		clienteDoBanco.setSaldo(0.0);
+		
 	}
 
+	//Tests do ClienteDoBanco
 	@Test
 	public void testGetNome() {
 		assertEquals("Cliente",clienteDoBanco.getNome());
@@ -55,7 +58,9 @@ public class TestClienteDoBanco {
 	}
 	
 	@Test
-	public void testSaldoInicial() {
-		assertEquals(80.0,clienteDoBanco.getSaldoInicial(),0.01);
+	public void testSaldoAtual() {
+		clienteDoBanco.saldoAtual();
+		assertEquals(80.0,clienteDoBanco.getSaldo(),0.01);
 	}
+	
 }

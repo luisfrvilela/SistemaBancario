@@ -7,7 +7,7 @@ public class ClienteDoBanco {
     private String cpf;
     private String rg;
     private String comprovanteDeResidencia;
-	private Double saldoInicial= 0.0;
+	private Double saldo= 0.0;
 	private Double deposito;
 	private Double retirada;
 	
@@ -17,7 +17,10 @@ public class ClienteDoBanco {
         this.setRg(rg);
         this.setComprovanteDeResidencia(comprovanteDeResidencia);
 }
-	
+	public void saldoAtual(){
+		saldo = ((saldo+ deposito) - retirada);
+		this.setSaldo(saldo);
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -31,12 +34,12 @@ public class ClienteDoBanco {
 		this.telefone = telefone;
 	}
 
-	public Double getSaldoInicial() {
-		return saldoInicial;
+	public Double getSaldo() {
+		return saldo;
 	}
 
-	public void setSaldoInicial(Double saldoInicial) {
-		this.saldoInicial = ((saldoInicial+ deposito) - retirada);
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
 	}
 
 	public Double getDeposito() {
