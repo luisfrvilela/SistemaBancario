@@ -3,7 +3,8 @@ package modelosDeClasses;
 public class ContaCorrente extends ClienteDoBanco {
 	
 	private Double valorEmprestimo;
-	private int numeroCartao;
+	private int numeroAleatorio;
+	private String numeroCartao;
 	private String comprovanteDeRenda;
 	private Double taxaDeManutencao;
 	
@@ -17,7 +18,8 @@ public class ContaCorrente extends ClienteDoBanco {
 		this.setSaldo(saldo);
 	}
 	public void solicitarCartaoDeDebito(){
-		numeroCartao = (int) Math.random();
+		numeroAleatorio = (int) (Math.random() * 10000000);
+		numeroCartao = new Integer(numeroAleatorio).toString();
 		this.setNumeroCartao(numeroCartao);
 	}
 	
@@ -40,12 +42,12 @@ public class ContaCorrente extends ClienteDoBanco {
 	}
 
 
-	public int getNumeroCartao() {
+	public String getNumeroCartao() {
 		return numeroCartao;
 	}
 
 
-	public void setNumeroCartao(int numeroCartao) {
+	public void setNumeroCartao(String numeroCartao) {
 		this.numeroCartao = numeroCartao;
 	}
 
@@ -57,6 +59,14 @@ public class ContaCorrente extends ClienteDoBanco {
 
 	public void setValorEmprestimo(Double valorEmprestimo) {
 		this.valorEmprestimo = valorEmprestimo;
+	}
+
+	public int getNumeroAleatorio() {
+		return numeroAleatorio;
+	}
+
+	public void setNumeroAleatorio(int numeroAleatorio) {
+		this.numeroAleatorio = numeroAleatorio;
 	}
 
 	

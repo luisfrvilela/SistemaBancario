@@ -32,5 +32,12 @@ public class TestContaCorrente {
 			contaCorrente.saldoAtualContaCorrente(0.0);
 			assertEquals(129.2 , contaCorrente.getSaldo(), 0.01);
 		}
+		
+		@Test
+		public void testSolicitarCartaoDeDebito(){
+			assertNull(contaCorrente.getNumeroCartao());
+			contaCorrente.solicitarCartaoDeDebito();
+			assertEquals(7,contaCorrente.getNumeroCartao().length());
+		}
 
 }
